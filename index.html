@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>lucky draw</span>
+    <div>
+        <button type="button" id='start'>start</button>
+        <button type="button" id='stop'>stop</button>
+    </div>
+</body>
+<script>
+
+
+    function createNumbersArray(start, end) {
+        let array = [];
+        for (let i = start; i <= end; i++) {
+            array.push(i);
+        }
+        return array;
+    }
+
+    function getRandomNumber(min, max) {
+
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+
+
+    let numbersArray = createNumbersArray(1, 20);
+    function method() {
+
+
+        if (numbersArray.length == 0) {
+            console.log("end");
+        }
+
+        let randomIndex = getRandomNumber(0, numbersArray.length);
+        let randomNumber = numbersArray[randomIndex];
+        numbersArray.splice(randomIndex, 1);
+
+
+        switch (randomNumber) {
+
+            case 1: {
+                console.log(1);
+                break;
+            }
+
+            case 2: {
+                console.log(2);
+                break;
+            }
+
+            case 3: {
+                console.log(3);
+                break;
+            }
+
+            case 4: {
+                console.log(4);
+                break;
+            }
+
+            default: {
+                console.log('下次會更好');
+
+                return;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+    const btnStart = document.getElementById('start');
+    btnStart.addEventListener('click', method);
+
+
+</script>
+
+</html>
